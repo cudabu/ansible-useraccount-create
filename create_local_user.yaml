@@ -1,0 +1,14 @@
+---
+- name: Create Local User for Temporary Login
+  hosts: your_linux_box
+  become: yes
+  vars:
+    local_user: temporary_user
+    local_user_password: "{{ vault_local_user_password }}"
+  tasks:
+    - name: Ensure the local user exists
+      ansible.builtin.user:
+        name: "{{ local_user }}"
+        password: "{{ local_user_password }}"
+        shell: /bin/bash
+        createhome: yes
