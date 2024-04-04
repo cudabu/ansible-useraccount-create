@@ -11,7 +11,7 @@ openssl passwd -6 -salt xyz yourpassword
 ## Encrypt password in vault
 
 ```
-ansible-vault encrypt_string 'your_hashed_password_here' --name 'local_user_password'
+ansible-vault encrypt_string 'your_hashed_password_here' --name 'vault_local_user_password'
 ```
 
 ## Run the playbook
